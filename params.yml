@@ -1,3 +1,13 @@
+# Git repo links
+gcp_concourse_repo: https://github.com/pivotal-cf/gcp-concourse.git
+gcp_concourse_repo_branch: master
+
+ert_concourse_repo: https://github.com/pivotal-cf/ert-concourse.git
+ert_concourse_repo_branch: master
+
+mysql_concourse_repo: https://github.com/pivotal-cf/mysql-concourse.git
+mysql_concourse_repo_branch: master
+
 # GCP project to create the infrastructure in
 gcp_project_id: CHANGEME
 

@@ -33,14 +33,14 @@ resources:
 - name: gcp-concourse
   type: git
   source:
-    uri: https://github.com/krishicks/gcp-concourse.git
-    branch: master
+    uri: {{gcp_concourse_repo}}
+    branch: {{gcp_concourse_repo_branch}}
 
 - name: ert-concourse
   type: git
   source:
-    uri: https://github.com/dlapiduz/ert-concourse.git
-    branch: fix-db-creds
+    uri: {{ert_concourse_repo}}
+    branch: {{ert_concourse_repo_branch}}
 
 - name: pivnet-opsmgr
   type: pivnet
