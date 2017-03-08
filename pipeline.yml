@@ -42,6 +42,12 @@ resources:
     uri: {{ert_concourse_repo}}
     branch: {{ert_concourse_repo_branch}}
 
+- name: mysql-concourse
+  type: git
+  source:
+    uri: {{mysql_concourse_repo}}
+    branch: {{mysql_concourse_repo_branch}}
+
 - name: pivnet-opsmgr
   type: pivnet
   check_every: 4h
@@ -58,6 +64,15 @@ resources:
     api_token: {{pivnet_token}}
     product_slug: elastic-runtime
     product_version: {{ert_major_minor_version}}
+    sort_by: semver
+
+- name: pivnet-mysql
+  type: pivnet
+  check_every: 4h
+  source:
+    api_token: {{pivnet_token}}
+    product_slug: p-mysql
+    product_version: {{mysql_major_minor_version}}
     sort_by: semver
 
 - name: tool-om
@@ -272,3 +287,27 @@ jobs:
       pcf_ert_domain: {{pcf_ert_domain}}
       pcf_opsman_admin: {{pcf_opsman_admin_username}}
       pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
+
+- name: upload-mysql
+  serial_groups: [services]
+  plan:
+  - aggregate:
+    - get: gcp-concourse
+      trigger: true
+      passed: [deploy-director]
+    - get: mysql-concourse
+    - get: pivnet-mysql
+      params:
+        globs:
+        - "*pivotal"
+    - get: tool-om
+      params:
+        globs:
+        - "om-linux"
+  - task: upload
+    file: mysql-concourse/ci/tasks/upload-mysql.yml
+    params:
+      pcf_ert_domain: {{pcf_ert_domain}}
+      pcf_opsman_admin: {{pcf_opsman_admin_username}}
+      pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
+

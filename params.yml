@@ -68,3 +68,6 @@ opsman_major_minor_version: 1.9.*
 
 # PCF Elastic Runtime minor version to install
 ert_major_minor_version: 1.9.*
+
+# MySQL for PCF minor version to install
+mysql_major_minor_version: 1.8.*
