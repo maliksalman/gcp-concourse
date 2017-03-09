@@ -90,7 +90,7 @@ resources:
     access_token: {{github_token}}
     globs:
     - stemcell-downloader-linux
-	
+
 jobs:
 - name: wipe-env
   serial_groups: [terraform]
@@ -329,7 +329,7 @@ jobs:
       pcf_opsman_admin: {{pcf_opsman_admin_username}}
       pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
       pcf_iaas: gcp
-	  
+
 - name: deploy-mysql
   serial_groups: [services]
   plan:
@@ -373,3 +373,9 @@ jobs:
       pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
       terraform_prefix: {{gcp_resource_prefix}}
       mysql_protections_recipient_email: {{mysql_protections_recipient_email}}
+  - task: deploy
+    file: mysql-concourse/ci/tasks/deploy-mysql.yml
+    params:
+      pcf_ert_domain: {{pcf_ert_domain}}
+      pcf_opsman_admin: {{pcf_opsman_admin_username}}
+      pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
