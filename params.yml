@@ -73,4 +73,4 @@ ert_major_minor_version: 1.9.*
 mysql_major_minor_version: 1.8.*
 
 # Email recipient for the mysql-protections feature
-mysql_protections_recipient_email: GHANGEME
+mysql_protections_recipient_email: "GHANGEME"
