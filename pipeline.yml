@@ -353,3 +353,4 @@ jobs:
       pcf_opsman_admin: {{pcf_opsman_admin_username}}
       pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
       terraform_prefix: {{gcp_resource_prefix}}
+      mysql_protections_recipient_email: {{mysql_protections_recipient_email}}

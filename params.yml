@@ -71,3 +71,6 @@ ert_major_minor_version: 1.9.*
 
 # MySQL for PCF minor version to install
 mysql_major_minor_version: 1.8.*
+
+# Email recipient for the mysql-protections feature
+mysql_protections_recipient_email: GHANGEME
