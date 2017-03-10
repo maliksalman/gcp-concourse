@@ -2,10 +2,10 @@
 gcp_concourse_repo: https://github.com/pivotal-cf/gcp-concourse.git
 gcp_concourse_repo_branch: master
 
-ert_concourse_repo: https://github.com/pivotal-cf/ert-concourse.git
-ert_concourse_repo_branch: master
+ert_concourse_repo: https://github.com/dlapiduz/ert-concourse.git
+ert_concourse_repo_branch: fix-db-creds
 
-mysql_concourse_repo: https://github.com/pivotal-cf/mysql-concourse.git
+mysql_concourse_repo: https://github.com/maliksalman/mysql-concourse.git
 mysql_concourse_repo_branch: master
 
 # GCP project to create the infrastructure in
