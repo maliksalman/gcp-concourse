@@ -347,18 +347,6 @@ jobs:
     params:
       pcf_iaas: gcp
       terraform_template: c0-gcp-poc
-      pcf_ert_ssl_cert: "generate"
-      gcp_proj_id: {{gcp_project_id}}
-      gcp_region: {{gcp_region}}
-      gcp_storage_access_key: {{gcp_storage_access_key}}
-      gcp_storage_secret_key: {{gcp_storage_secret_key}}
-      gcp_svc_acct_key: {{gcp_service_account_key}}
-      pcf_ert_domain: {{pcf_ert_domain}}
-      pcf_opsman_admin: {{pcf_opsman_admin_username}}
-      pcf_opsman_admin_passwd: {{pcf_opsman_admin_password}}
-      ert_sql_db_username: {{ert_sql_db_username}}
-      ert_sql_db_password: {{ert_sql_db_password}}
-      terraform_prefix: {{gcp_resource_prefix}}
   - task: configure-mysql
     file: mysql-concourse/ci/tasks/configure-mysql.yml
     params:
